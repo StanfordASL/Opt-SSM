@@ -21,12 +21,14 @@ Install the required package dependencies and the package itself in editable mod
 pip install -r requirements.txt
 pip install -e .
 ```
-And you're good to go! Note that SSMLearnPy is currently only compatible with NumPy 1.24.3, so if you have a different version of NumPy installed, you may need to downgrade it.
+Note that SSMLearnPy is currently only compatible with NumPy 1.24.3, so if you have a different version of NumPy installed, you may need to downgrade it.
 Additionally, we make use of IPOPT, which has to be installed.
 In case you are using conda, this can be installed using:
 ```bash
 conda install conda-forge::ipopt
 ```
+Finally, we recommend using Gurobi for the solving the MPC, which has to be installed separately.
+However, one can also use OSQP, which can be set in the `run_mpc` function in the [mpc](./opt_ssm/mpc.py) file.
 
 ## 📘 Usage
 Example usage of the OptSSM class:
